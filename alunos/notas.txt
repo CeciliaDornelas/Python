@@ -1,0 +1,2 @@
+ nome:ci
+ primeira nota:10 segunda nota:4 terceira nota:5
