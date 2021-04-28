@@ -2,6 +2,7 @@ import os
 
 # dados para entrar
 nome = input("digite o nome do aluno: ")
+mat = input("digite o numero da matricula:")
 n1 = input("digite a primeira nota: ")
 n2 = input("digite a segunda nota: ")
 n3 = input("digite a terceira nota: ")
@@ -9,23 +10,16 @@ n3 = input("digite a terceira nota: ")
 
 #adicionar ao arquivo notas.txt
 arqv = open("C:/Users/cecilia/Desktop/prog/Python/alunos/notas.txt","a")
-arqv.write(" nome:")
-arqv.write(nome)
-arqv.write("\n primeira nota:")
-arqv.write(n1)
-arqv.write(" segunda nota:")
-arqv.write(n2)
-arqv.write(" terceira nota:")
-arqv.write(n3)
-arqv.write("\n")
+arqv.write(f"nome: {nome} matricula: {mat} \n nota 1: {n1}  nota 2: {n2} nota 3: {n3} \n")
 
 arqv.close()
+#arqv.closed
 
 #ler conteudo
-arqv = open("C:/Users/cecilia/Desktop/prog/Python/alunos/notas.txt","r")
-conteudo = arqv.read()
+with open("C:/Users/cecilia/Desktop/prog/Python/alunos/notas.txt","r") as arquivo:
 
-print("conteudo retornado pelo read:")
-print(repr(conteudo))
+    for linha in arquivo:
+        linha_limpa = linha.strip()
+        print(repr(linha_limpa))
 
 arqv.close()
